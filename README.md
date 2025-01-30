@@ -1,28 +1,44 @@
-@MoneyMorphBot - бот для Telegram позволяет конвертировать валюту в режиме реального времени, используя API для получения актуальных курсов.
+**@MoneyMorphBot** is a Telegram bot for converting currencies using real-time exchange rates. It allows users to convert amounts between various cryptocurrencies (e.g., Bitcoin, Ethereum) based on their selected conversion rate.
 
-Возможности:
+**Features:**
 
-Конвертация валют по актуальному курсу
+Currency conversion: The bot allows you to convert an amount from one currency to another (e.g., BTC to USD).
 
-Поддержка популярных валют (доллар, евро, рубль)
+**Supported commands:**
 
-Обработка ошибок и валидация пользовательских данных
+/start and /help: Provides a guide on how to use the bot.
 
-Простота использования с интуитивно понятными командами
+/values: Displays all available currencies that can be converted.
 
-Команды бота:
+Text input for currency conversion (e.g., "BTC USD 1" to convert 1 Bitcoin to USD).
 
-/start или /help – получить инструкцию по использованию бота
+**How to Use:**
 
-/values – посмотреть список доступных валют
+Start the bot: Use the /start or /help commands to get instructions on how to use the bot.
 
-<имя валюты> <в какую валюту перевести> <количество> – выполнить конвертацию
+Currency conversion: To convert currencies, send a message in the format:
+<currency_from> <currency_to> <amount>
 
-Требования:
+For example, sending BTC USD 1 will convert 1 Bitcoin (BTC) to USD based on the current exchange rate.
 
-Python 3.8+
+List available currencies: Use the /values command to get a list of all supported currencies.
+Error Handling
 
-Библиотеки из requirements.txt:
+Invalid input format: If the user does not provide the correct format (e.g., missing parameters or wrong data types), the bot will respond with an error message like:
+Некорректное количество параметров. Повторите попытку ввода.
 
-pip install -r requirements.txt
+Invalid currency: If an unsupported or incorrect currency is provided, the bot will inform the user with an error like:
+Не удалось обработать валюту <currency_name>!
 
+General errors: If any other error occurs during the process (e.g., network issues or API failures), the bot will return a generic error message:
+Не удалось обработать команду. <error_details>
+
+**Technologies:**
+
+Python: Programming language used for the bot.
+
+Telebot: Python library for creating Telegram bots.
+
+Requests: Python library for making HTTP requests to the CryptoCompare API.
+
+JSON: Used to handle API responses.
