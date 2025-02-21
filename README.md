@@ -30,8 +30,7 @@ pip install -r requirements.txt
 Before starting the project, configure the necessary environment variables. Create a `.env` file with the following content:
 
 ```
-API_KEY=<your_api_key>
-BOT_TOKEN=<your_bot_token>
+TOKEN=<your_bot_token>
 ```
 
 ### Start the Bot
