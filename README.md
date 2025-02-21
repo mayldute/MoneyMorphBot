@@ -1,44 +1,54 @@
-**@MoneyMorphBot** is a Telegram bot for converting currencies using real-time exchange rates. It allows users to convert amounts between various cryptocurrencies (e.g., Bitcoin, Ethereum) based on their selected conversion rate.
+# MoneyMorphBot
 
-**Features:**
+This project implements a Telegram bot for converting currencies using real-time exchange rates. The bot allows users to convert amounts between various cryptocurrencies and fiat currencies based on the current exchange rates.
 
-Currency conversion: The bot allows you to convert an amount from one currency to another (e.g., BTC to USD).
+## Features
 
-**Supported commands:**
+The bot provides the following features:
 
-/start and /help: Provides a guide on how to use the bot.
+- Converting an amount from one currency to another.
+- Listing all available currencies for conversion.
 
-/values: Displays all available currencies that can be converted.
+## Technologies
 
-Text input for currency conversion (e.g., "BTC USD 1" to convert 1 Bitcoin to USD).
+- **Python** – Programming language used for the bot.
+- **Telebot** – Python library for creating Telegram bots.
+- **Requests** – Python library for making HTTP requests to the CryptoCompare API.
+- **JSON** – Used to handle API responses.
 
-**How to Use:**
+## How to Deploy the Project
 
-Start the bot: Use the /start or /help commands to get instructions on how to use the bot.
+### Install Dependencies
 
-Currency conversion: To convert currencies, send a message in the format:
-<currency_from> <currency_to> <amount>
+To install the dependencies, run the command:
+```sh
+pip install -r requirements.txt
+```
 
-For example, sending BTC USD 1 will convert 1 Bitcoin (BTC) to USD based on the current exchange rate.
+### Configure the Bot
 
-List available currencies: Use the /values command to get a list of all supported currencies.
-Error Handling
+Before starting the project, configure the necessary environment variables. Create a `.env` file with the following content:
 
-Invalid input format: If the user does not provide the correct format (e.g., missing parameters or wrong data types), the bot will respond with an error message like:
-Некорректное количество параметров. Повторите попытку ввода.
+```
+API_KEY=<your_api_key>
+BOT_TOKEN=<your_bot_token>
+```
 
-Invalid currency: If an unsupported or incorrect currency is provided, the bot will inform the user with an error like:
-Не удалось обработать валюту <currency_name>!
+### Start the Bot
 
-General errors: If any other error occurs during the process (e.g., network issues or API failures), the bot will return a generic error message:
-Не удалось обработать команду. <error_details>
+To start the bot, use the command:
+```sh
+python bot.py
+```
 
-**Technologies:**
+## How to Use the Bot
 
-Python: Programming language used for the bot.
+- **Start the Bot**: Use the `/start` or `/help` commands to get instructions on how to use the bot.
+- **Convert Currencies**: Send a message in the format: `<currency_from> <currency_to> <amount>`. For example, sending `BTC USD 1` will convert 1 Bitcoin (BTC) to USD based on the current exchange rate.
+- **List Available Currencies**: Use the `/values` command to get a list of all supported currencies.
 
-Telebot: Python library for creating Telegram bots.
+## Error Handling
 
-Requests: Python library for making HTTP requests to the CryptoCompare API.
-
-JSON: Used to handle API responses.
+- **Invalid Input Format**: If the user does not provide the correct format (e.g., missing parameters or wrong data types), the bot will respond with an error message like: `Incorrect number of parameters. Please try again.`
+- **Invalid Currency**: If an unsupported or incorrect currency is provided, the bot will inform the user with an error like: `Failed to process currency <currency_name>!`
+- **General Errors**: If any other error occurs during the process (e.g., network issues or API failures), the bot will return a generic error message: `Failed to process the command. <error_details>`
